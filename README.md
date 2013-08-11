@@ -7,9 +7,4 @@ Remember to allow group write to installation directory.
 
 Install it with setup.php.
 
-Here are small clues to get the idea what it is:
-
-http://img21.imageshack.us/img21/8317/sscczz.jpg
-
-http://www.youtube.com/watch?v=8QeWDKIpAAw
-
+Now with audio output option support
