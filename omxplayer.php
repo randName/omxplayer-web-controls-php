@@ -1,7 +1,7 @@
 <?php
 require_once 'cfg.php';
 mb_internal_encoding('UTF-8');
-setlocale(LC_ALL, 'ru_RU.UTF-8');
+//setlocale(LC_ALL, 'ru_RU.UTF-8');
 ?>
 <html>
 	<head>
@@ -45,7 +45,7 @@ setlocale(LC_ALL, 'ru_RU.UTF-8');
 	<body>
 		<center>
 			<?php
-			$files = glob(PATH.'/{*.[mM][kK][vV],*.[aA][vV][iI],*.[mM][pP][4]}', GLOB_BRACE | GLOB_MARK);
+			$files=glob(PATH.'/{*.[mM][kK][vV],*.[aA][vV][iI],*.[mM][pP]4,*.[fF][lL][vV],*.[mM][oO][vV]}', GLOB_BRACE | GLOB_MARK);
 			//print_r($files);
 			$vids = array_filter ($files, function ($file) { if (substr($file,-1) != '/') return true;} ); //filter out directories
 			?>
@@ -129,7 +129,7 @@ setlocale(LC_ALL, 'ru_RU.UTF-8');
 				<tr><td colspan="3"><hr></td></tr>
 				<tr>
 					<td>
-						<button type="button" class="button" onclick="">&nbsp;</button>
+						<a href="audio.php"><button type="button" class="button" >AUDIO</button></a>
 					</td>
 					<td>
 						<a href="setup.php?path=<?php echo PATH;?>"><button type="button" class="button" >SETUP</button></a>
