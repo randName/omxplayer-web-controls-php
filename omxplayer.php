@@ -45,7 +45,7 @@ mb_internal_encoding('UTF-8');
 	<body>
 		<center>
 			<?php
-			$files=glob(PATH.'/{*.[mM][kK][vV],*.[aA][vV][iI],*.[mM][pP]4,*.[fF][lL][vV],*.[mM][oO][vV]}', GLOB_BRACE | GLOB_MARK);
+			$files=glob(PATH.'/*.{mkv,avi,mp4,flv,mov,MKV,AVI,MP4,FLV,MOV}', GLOB_BRACE | GLOB_MARK);
 			//print_r($files);
 			$vids = array_filter ($files, function ($file) { if (substr($file,-1) != '/') return true;} ); //filter out directories
 			?>
@@ -129,7 +129,7 @@ mb_internal_encoding('UTF-8');
 				<tr><td colspan="3"><hr></td></tr>
 				<tr>
 					<td>
-						<a href="audio.php"><button type="button" class="button" >AUDIO</button></a>
+						<button type="button" class="button" onclick="">&nbsp;</button>
 					</td>
 					<td>
 						<a href="setup.php?path=<?php echo PATH;?>"><button type="button" class="button" >SETUP</button></a>

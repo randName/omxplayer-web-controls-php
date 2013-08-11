@@ -70,6 +70,28 @@
 			}
 		}
 
+		if ( !empty($_REQUEST['output']) ) {
+
+			$output = $_REQUEST['output'];
+
+			if ( $output != "hdmi" && $output != "local" ){
+				echo 'error - output can only be hdmi or local';
+				die();
+			} else {
+				if ( file_put_contents('./output', $output) ) {
+					echo 'config saved - OK';
+					header("Location: omxplayer.php");
+				} else {
+					echo 'error saving output - please fix permissions';
+					die();
+				}
+			}
+		}
+
+		echo "<h1>Please choose the audio output</h1>";
+		echo "<a href=\"{$script}?output=hdmi\"><button type=\"button\">HDMI</button></a>";
+		echo "<a href=\"{$script}?output=local\"><button type=\"button\">LOCAL</button></a>";
+
 		echo "<h1>Please choose videos directory</h1>";
 		echo "<h1><b>Browsing Location:</b></h1><input type=\"text\" name=\"path\" value=\"{$path}\" /><a href=\"{$script}?path={$path}&save=save\"><button type=\"button\">save path</button></a>";
 
